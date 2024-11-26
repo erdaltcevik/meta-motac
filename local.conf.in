@@ -1,0 +1,11 @@
+
+#**************************************************************************************
+
+MACHINE = "mach-motac"
+DISTRO = "dist-motac"
+
+DL_DIR = "/stor/poky_dl"
+
+INHERIT_DISTRO:remove = "create-spdx license "
+
+LICENSE_FLAGS_ACCEPTED += " synaptics-killswitch "

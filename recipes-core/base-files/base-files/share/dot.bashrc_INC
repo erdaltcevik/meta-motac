@@ -1,0 +1,29 @@
+
+
+echo "~/.bashrc has been parsed"
+
+alias l='ls -Alp'
+alias ll='l | less'
+alias lw='ls -1Ap'
+alias lwr='ls -1ApR'
+alias lt='ls -Alpt'
+alias lwt='ls -1At'
+alias ..='cd .. && l'
+
+
+WESTON_USER="erdal"
+WESTON_GROUP="erdal"
+WESTON_USER_ID="1000"
+
+user_id=$(id -u)
+
+if test  $user_id -eq $WESTON_USER_ID ; then
+  if test -d "/run/user/$WESTON_USER_ID"; then
+    if test -z "$XDG_RUNTIME_DIR"; then
+      export XDG_RUNTIME_DIR=/run/user/$WESTON_USER_ID
+      export WAYLAND_DISPLAY=wayland-1    
+    fi
+  fi
+fi
+
+
