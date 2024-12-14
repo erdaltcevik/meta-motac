@@ -10,7 +10,6 @@ IMAGE_FSTYPES:append = " wic "
 
 IMAGE_INSTALL += " \
    packagegroup-motac \
-   libstdc++ \
 "
 
 ##IMAGE_LINGUAS:remove = " en-gb "
@@ -32,11 +31,6 @@ BAD_RECOMMENDATIONS:pn-${PN} += " \
 ##"
 
 ##SDK_TOOLCHAIN_LANGS:append = "rust"
-
-TOOLCHAIN_TARGET_TASK:append = " \
-  libstdc++-staticdev \
-  libc-staticdev\
-"
 
 inherit extrausers
 
