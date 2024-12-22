@@ -2,10 +2,9 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI:append = " \
-  file://motac-dvl.cfg \
 "
 #
-# 
+#   file://motac-dvl.cfg \
 #
 
 do_install:append(){

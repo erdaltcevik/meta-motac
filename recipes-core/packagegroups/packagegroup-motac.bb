@@ -39,26 +39,25 @@ RDEPENDS:${PN} += "\
   weston-init \
   weston-examples \
   kbd-keymaps \
+  vim \
   networkmanager \
-  nano \
   openssh \
+  iproute2 \
+  netcat-openbsd \
   avahi-autoipd \
   avahi-utils\
   libavahi-glib \
   libavahi-gobject \
-  iproute2 \
-  netcat-openbsd \
+  dtc \
+  binutils \
   gdbserver \
   gtk4 \
   python3-modules \
   tcpdump \
   libgpiod-tools \
   alsa-utils \
-  dtc \
-  binutils \
-  vala \
 "
 #
 #   
-#
+#  vala \
 #

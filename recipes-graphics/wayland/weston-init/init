@@ -27,26 +27,14 @@ for x in $CMDLINE; do
         esac
 done
 
-
 case "$1" in
   start)
         . /etc/profile
-	      export HOME=/home/root
+        export HOME=ROOTHOME
 
-        export WESTON_USER=erdal
+        export $(su -c "dbus-launch" erdal)
 
-        if test -z "$XDG_RUNTIME_DIR"; then
-          export XDG_RUNTIME_DIR=/run/user/`id -u ${WESTON_USER}`
-          if ! test -d "$XDG_RUNTIME_DIR"; then
-            mkdir --parents $XDG_RUNTIME_DIR
-            chmod 0700 $XDG_RUNTIME_DIR
-          fi
-        fi
-        chown $WESTON_USER:$WESTON_GROUP $XDG_RUNTIME_DIR
-      
-        su -c "dbus-launch" $WESTON_USER
-
-        WESTON_USER=$WESTON_USER  weston-start  $OPTARGS  &
+        WESTON_USER=erdal weston-start $OPTARGS &
   ;;
 
   stop)

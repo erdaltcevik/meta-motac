@@ -1,11 +1,16 @@
 
 #**************************************************************************************
+DL_DIR = "/stor/poky_dl"
 
 MACHINE = "motac"
-DISTRO = "dist-motac"
 
-DL_DIR = "/stor/poky_dl"
+DISTRO = "dist-motac"
 
 INHERIT_DISTRO:remove = "create-spdx license "
 
 LICENSE_FLAGS_ACCEPTED += " synaptics-killswitch "
+##LICENSE_FLAGS_ACCEPTED = "commercial"
+
+EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+
+##INHERIT += "rm_work"
